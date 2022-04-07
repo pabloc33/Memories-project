@@ -5,11 +5,12 @@ import {
   CircularProgress,
   Divider,
 } from "@material-ui/core";
+import CommentSection from "./CommentSection";
 import { useDispatch, useSelector } from "react-redux";
 import moment from "moment";
 import { useParams, useHistory } from "react-router-dom";
-import useStyles from "./styles";
 import { getPost, getPostsBySearch } from "../../actions/posts";
+import useStyles from "./styles";
 
 const PostDetails = () => {
   const { post, posts, isLoading } = useSelector((state) => state.posts);
@@ -68,7 +69,7 @@ const PostDetails = () => {
           </Typography>
           <Divider style={{ margin: "20px 0" }} />
           <Typography variant="body1">
-            <strong>Realtime Chat - coming soon!</strong>
+            <CommentSection post={post} />
           </Typography>
           <Divider style={{ margin: "20px 0" }} />
           <Typography variant="body1">
